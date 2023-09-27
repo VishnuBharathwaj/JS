@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <link href="../CSS/css-task7.css" rel="stylesheet" type="text/css"/> 
+      </head>
+<body style="background-color: bisque;">
+<script>  
+function validateform(){  
+var fullname=document.myform.fullname.value;
+var password=document.myform.password.value;  
+var repassword = document.myform.repassword.value;
+var address = document.myform.address.value;
+  
+if (fullname==null || fullname==""){  
+  alert("Name can't be blank");  
+  return false;  
+}else if(password.length<6){  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
+  }  
+  else if(repassword.length<6 && repassword!=password){  
+  alert("Password must be at least 6 characters long/Repassword wrong");  
+  return false;  
+  }  
+  else if(address == null || address==""){  
+  alert("Address cant be blank");  
+  return false;  
+  }  
+  else if(address == null || address==""){  
+  alert("Address cant be blank");  
+  return false;  
+  }  
+  alert("SUCCESS SAVED");
+}  
+</script>  
+<body align='center'>  
+    <h2>Registration form</h2>
+<form name="myform" method="post" onsubmit="return validateform()" >  
+        <div>
+          <label for="name">Full Name</label>
+          <input type="text" id="fullname" placeholder="Enter your name" />
+        </div>
+        <div>
+          <label for="Username">Username:</label>
+          <input type="text" id="username" placeholder="Enter your Username" />
+        </div>
+        <div>
+          <label for="Password">Password:</label>
+          <input type="password" id="password" placeholder="Enter your password" />
+        </div>
+        <div>
+          <label for="Re-Password">Re - Password:</label>
+          <input type="password" id="repassword" placeholder="Enter your password" />
+        </div>
+        <div>
+            <label for="phone">Phone number</label>
+            <input type="password" id="phone" placeholder="Enter your phone number" />
+          </div>
+        <div>
+          <label for="Address">Address:</label>
+          <input type="text" id="address" placeholder="Enter your Address" />
+        </div>
+        <div>
+          <label for="age">Age:</label>
+          <input type="number"min = "0" id="age" name="age" placeholder="Enter your age" />
+        </div>
+        <div>
+        <label for="Gender">Gender:</label>
+          <select name="gender" id="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+          </select>
+        </div>
+        <div>
+            <label for="Country">Country:</label>
+              <select name="country" id="country">
+                  <option value="india">India</option>
+                  <option value="USA">USA</option>
+              </select>
+            </div>
+        <button type="submit" value="register">  Register </button>
+        </form>
+</body>
+</html>
